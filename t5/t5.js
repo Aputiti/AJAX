@@ -69,11 +69,12 @@ async function fetchData(url, options) {
             options
           );
 
+          document.querySelectorAll('.course').forEach(el => el.remove());
           let cn = 0;
           for (const i of mealData.courses) {
             cn++;
-            const part = `<p><span>Course ${cn}: </span>${i.name}, <span>Price:</span> ${i.price}, <span>Diets:</span> ${i.diets}</p>`;
-            dialog.insertAdjacentHTML('beforeend', part);
+            const course = `<p class="course"><span>Course ${cn}: </span>${i.name}, <span>Price:</span> ${i.price}, <span>Diets:</span> ${i.diets}</p>`;
+            dialog.insertAdjacentHTML('beforeend', course);
             console.log('Course: ' + i.name, i.price, i.diets);
           }
         } catch (error) {
