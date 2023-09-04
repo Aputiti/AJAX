@@ -12,17 +12,12 @@ async function fetchData(url, options) {
 
 (async function () {
   try {
-    const user = {
-      name: 'Abdur A',
-      job: 'CS Student',
-    };
-    const url = 'https://reqres.in/api/users';
+    const url = 'https://reqres.in/api/users/1';
     const options = {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(user),
     };
     const userData = await fetchData(url, options);
     console.log(userData);

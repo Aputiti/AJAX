@@ -12,21 +12,24 @@ async function fetchData(url, options) {
 
 (async function () {
   try {
-    const user = {
-      name: 'Abdur A',
-      job: 'CS Student',
-    };
-    const url = 'https://reqres.in/api/users';
+    const url = 'https://reqres.in/api/unknown/23';
     const options = {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(user),
+    };
+    const options2 = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     };
     const userData = await fetchData(url, options);
+    const userData2 = await fetchData(url, options2);
     console.log(userData);
+    console.log(userData2);
   } catch (error) {
-    alert(error.message);
+    console.log(error.message);
   }
 })();
